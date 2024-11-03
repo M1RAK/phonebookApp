@@ -1,0 +1,29 @@
+{
+  "name": "phonebook-backend",
+  "version": "1.0.0",
+  "description": "A simple REST API for the phonebook app.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build:ui": "rm -rf dist && cd ../phonebook-frontend/ && npm run build && cp -r dist ../phonebook-backend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m'Shipped!' && git push -u origin main",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint ."
+  },
+  "author": "Abdullahi Ismail",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.17.3",
+    "mongoose": "^8.8.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "eslint": "^9.14.0",
+    "globals": "^15.11.0",
+    "nodemon": "^2.0.15"
+  }
+}
